@@ -13,7 +13,7 @@ public class Main {
         Scanner reader = new Scanner(System.in);
 
         String title = "\t=================\n\tMatrix Calculator\n\tMain Menu\n\t=================\n";
-        String mainMenu = "Please select one of the following options:\n\t1. Add matrices \n\t2. Multiply matrix to a constant\n\t3. Multiply Matrices\n\t4. Transpose matrix\n\t5. Calculate determinant\n\t6. Inverse matrix\n\t0. Exit";
+        String mainMenu = "Please select one of the following options:\n\t1. Add matrices \n\t2. Scalar multiplication\n\t3. Multiply Matrices\n\t4. Transpose matrix\n\t5. Calculate determinant\n\t6. Inverse matrix\n\t0. Exit";
         String prompt = "--> ";
         boolean exit = false;
         while (!exit) {
