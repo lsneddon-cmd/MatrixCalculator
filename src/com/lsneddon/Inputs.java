@@ -25,7 +25,7 @@ public class Inputs {
             System.out.print("=");
         }
         System.out.println();
-        for (int i = 1; i < subMenuOptions.length; i++) {
+        for (int i = 1; i <= subMenuOptions.length; i++) {
             System.out.print("\t" + i + ". " + subMenuOptions[i - 1] + "\n");
         }
         System.out.println();

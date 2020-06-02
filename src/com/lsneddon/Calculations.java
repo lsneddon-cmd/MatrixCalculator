@@ -1,7 +1,5 @@
 package com.lsneddon;
 
-import java.util.Scanner;
-
 public class Calculations {
 
 
@@ -65,9 +63,7 @@ public class Calculations {
     public static double[][] calculateHorizontalTransposition(double[][] matrix, int rows, int cols) {
         double[][] outputMatrix = new double[rows][cols];
         for (int i = 0; i < rows; i++) {
-            for (int j= 0; j < cols; j++) {
-                outputMatrix[i][j] = matrix[cols - 1 - i][j];
-            }
+            if (cols >= 0) System.arraycopy(matrix[cols - 1 - i], 0, outputMatrix[i], 0, cols);
         }
         return outputMatrix;
     }
