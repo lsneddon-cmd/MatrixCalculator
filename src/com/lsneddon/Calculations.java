@@ -3,29 +3,17 @@ package com.lsneddon;
 import java.util.Scanner;
 
 public class Calculations {
-    public static void addition(Scanner reader) {
-        System.out.println("Let's start with the first matrix:");
-        int fRows = MatrixReader.readRows(reader);
-        int fCols = MatrixReader.readColumns(reader);
-        double[][] fMatrix = MatrixReader.readMatrix(fRows, fCols, reader);
-        System.out.println("Now for the second matrix:");
-        int rows = MatrixReader.readRows(reader);
-        int cols = MatrixReader.readColumns(reader);
-        double[][] matrix = MatrixReader.readMatrix(rows, cols, reader);
-        if (!(fRows == rows) || !(fCols == cols)) {
-            System.out.println("\tERROR!\n\tMatrices must have the same dimensions to add");
-        } else {
-            double[][] outputMatrix = new double[fRows][fCols];
-            for (int i = 0; i < fRows; i++) {
-                for (int j = 0; j < fCols; j++) {
-                    outputMatrix[i][j] = fMatrix[i][j] + matrix[i][j];
-                }
+
+
+    public static double[][] calculateAddition(int rows, int cols, double[][] first, double[][] second) {
+        double[][] outputMatrix = new double[rows][cols];
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                outputMatrix[i][j] = first[i][j] + second[i][j];
             }
-            MatrixPrinter.printMatrix(outputMatrix, fRows, fCols);
         }
+        return outputMatrix;
     }
-
-
 
     public static double[][] calculateScalarMult(double[][] matrix, double scalar) {
         double[][] outputMatrix = new double[matrix.length][matrix.length];
@@ -37,32 +25,16 @@ public class Calculations {
         return outputMatrix;
     }
 
-    public static void multiplyMatrices(Scanner reader) {
-        // Matrix multiplication
-        System.out.println("Let's start with the first matrix:");
-        int fRows = MatrixReader.readRows(reader);
-        int fCols = MatrixReader.readColumns(reader);
-        double[][] fMatrix = MatrixReader.readMatrix(fRows, fCols, reader);
-        System.out.println("Now for the second matrix:");
-        int sRows = MatrixReader.readRows(reader);
-        int sCols = MatrixReader.readColumns(reader);
-        double[][] sMatrix = MatrixReader.readMatrix(sRows, sCols, reader);;
-        double[][] outputMatrix;
-        if (fCols != sRows) {
-            // Matrices cannot be multiplied, print error
-            System.out.println("\tERROR\n\tMatrices cannot be multiplied\n\tThe number of rows of a matrix must match the number of columns of another matrix in order to multiply them\n");
-        } else {
-            outputMatrix = new double[fRows][sCols];
-            for (int i = 0; i < fRows; i++) {
-                for (int j = 0; j < sCols; j++) {
-                    for (int k = 0; k < fCols; k++) {
-                        outputMatrix[i][j] += fMatrix[i][k] * sMatrix[k][j];
-                    }
+    public static double[][] calculateMatrixMult(int fRows, int fCols, int sCols, double[][] first, double[][] second) {
+        double[][] outputMatrix = new double[fRows][sCols];
+        for (int i = 0; i < fRows; i++) {
+            for (int j = 0; j < sCols; j++) {
+                for (int k = 0; k < fCols; k++) {
+                    outputMatrix[i][j] += first[i][k] * second[k][j];
                 }
             }
-            // Print output Matrix
-            MatrixPrinter.printMatrix(outputMatrix, fRows, sCols);
         }
+        return outputMatrix;
     }
 
     public static void sideTransposition(Scanner reader) {
@@ -104,16 +76,6 @@ public class Calculations {
             }
         }
         MatrixPrinter.printMatrix(outputMatrix, rows, cols);
-    }
-
-    public static void mainTransposition(Scanner reader) {
-        int rows = MatrixReader.readRows(reader);
-        int cols = MatrixReader.readColumns(reader);
-        double[][] matrix = MatrixReader.readMatrix(rows, cols, reader);
-        int oRows = cols;
-        int oCols = rows;
-        double[][] outputMatrix = calculateMainTransposition(matrix);
-        MatrixPrinter.printMatrix(outputMatrix, oRows, oCols);
     }
 
     public static double[][] calculateMainTransposition(double[][] matrix) {

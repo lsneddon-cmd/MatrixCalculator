@@ -25,7 +25,7 @@ public class Main {
                     break;
                 case 1:
                     System.out.println("Performing Matrix Addition");
-                    Calculations.addition(reader);
+                    Inputs.addition(reader);
                     break;
                 case 2:
                     System.out.println("Performing Scalar Multiplication");
@@ -33,14 +33,14 @@ public class Main {
                     break;
                 case 3:
                     System.out.println("Performing Matrix Multiplication");
-                    Calculations.multiplyMatrices(reader);
+                    Inputs.multiplyMatrices(reader);
                     break;
                 case 4:
                     int transpositionChoice = transposeSelection(reader);
                     switch (transpositionChoice) {
                         case 1:
                             System.out.println("Perfoming Main Diagonal Transposition");
-                            Calculations.mainTransposition(reader);
+                            Inputs.mainTransposition(reader);
                             break;
                         case 2:
                             System.out.println("Performing Side Transposition");
