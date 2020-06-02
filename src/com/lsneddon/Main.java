@@ -1,6 +1,6 @@
 /**
  * This program carries out mathematical calculations on matrices
- * @version 1.1 2020-05-23
+ * @version 1.2 2020-06-02
  * @author Lewis Sneddon
  */
 

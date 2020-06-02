@@ -1,8 +1,7 @@
 package com.lsneddon;
 
+// A collection of static methods that carry out Math operations on given matrices
 public class Calculations {
-
-
     public static double[][] calculateAddition(int rows, int cols, double[][] first, double[][] second) {
         double[][] outputMatrix = new double[rows][cols];
         for (int i = 0; i < rows; i++) {
