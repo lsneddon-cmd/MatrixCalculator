@@ -125,7 +125,7 @@ public class Inputs {
         System.out.println("Now for the second matrix:");
         int sRows = Inputs.readRows(reader);
         int sCols = Inputs.readColumns(reader);
-        double[][] sMatrix = Inputs.readMatrix(sRows, sCols, reader);;
+        double[][] sMatrix = Inputs.readMatrix(sRows, sCols, reader);
 
         if (fCols != sRows) {
             // Matrices cannot be multiplied, print error
