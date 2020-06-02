@@ -25,16 +25,7 @@ public class Calculations {
         }
     }
 
-    public static void scalarMultiplication(Scanner reader) {
-        int rows = MatrixReader.readRows(reader);
-        int cols = MatrixReader.readColumns(reader);
-        double[][] matrix = MatrixReader.readMatrix(rows, cols, reader);
-        System.out.println("\tEnter a scalar to multiply by:");
-        System.out.print("--> ");
-        double scalar = reader.nextDouble();
-        double[][] outputMatrix = calculateScalarMult(matrix, scalar);
-        MatrixPrinter.printMatrix(outputMatrix, rows, cols);
-    }
+
 
     public static double[][] calculateScalarMult(double[][] matrix, double scalar) {
         double[][] outputMatrix = new double[matrix.length][matrix.length];

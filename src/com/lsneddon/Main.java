@@ -29,7 +29,7 @@ public class Main {
                     break;
                 case 2:
                     System.out.println("Performing Scalar Multiplication");
-                    Calculations.scalarMultiplication(reader);
+                    Inputs.scalarMultiplication(reader);
                     break;
                 case 3:
                     System.out.println("Performing Matrix Multiplication");
