@@ -11,10 +11,11 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner reader = new Scanner(System.in);
+        Menu menu = new Menu();
 
         boolean exit = false;
         while (!exit) {
-            int menuChoice = Inputs.mainMenuSelection(reader);
+            int menuChoice = menu.mainMenuSelection(reader);
 
             switch (menuChoice) {
                 case 0:
@@ -34,7 +35,7 @@ public class Main {
                     Inputs.multiplyMatrices(reader);
                     break;
                 case 4:
-                    int transpositionChoice = Inputs.transposeSelection(reader);
+                    int transpositionChoice = menu.transposeMenuSelection(reader);
                     switch (transpositionChoice) {
                         case 1:
                             System.out.println("Perfoming Main Diagonal Transposition");

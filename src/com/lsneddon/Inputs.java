@@ -3,69 +3,6 @@ package com.lsneddon;
 import java.util.Scanner;
 
 public class Inputs {
-
-    // Menu choices
-    public static int transposeSelection(Scanner reader) {
-        String[] subMenuOptions = {
-                "Main diagonal",
-                "Side diagonal",
-                "Vertical line",
-                "Horizontal line"
-        };
-        String title = "\tMatrix Calculator\n";
-        System.out.print("\t");
-        for (int i = 0; i < title.length(); i++) {
-            System.out.print("=");
-        }
-        System.out.println();
-        System.out.print(title);
-        System.out.println("\tTransposition Menu");
-        System.out.print("\t");
-        for (int i = 0; i < title.length(); i++) {
-            System.out.print("=");
-        }
-        System.out.println();
-        for (int i = 1; i <= subMenuOptions.length; i++) {
-            System.out.print("\t" + i + ". " + subMenuOptions[i - 1] + "\n");
-        }
-        System.out.println();
-        System.out.print("--> ");
-        return reader.nextInt();
-    }
-
-    public static int mainMenuSelection(Scanner reader) {
-        String title = "\tMatrix Calculator\n";
-        String mainMenu = "Please select one of the following options:\n";
-        String[] menuOptions = {
-                "Add Matrices",
-                "Scalar Multiplication",
-                "Multiply Matrices",
-                "Transpose Matrix",
-                "Determinant",
-                "Inverse Matrix",
-        };
-        String prompt = "--> ";
-        System.out.print("\t");
-        for (int i = 0; i < title.length(); i++) {
-            System.out.print("=");
-        }
-        System.out.println();
-        System.out.print(title);
-        System.out.println("\tMain Menu");
-        System.out.print("\t");
-        for (int i = 0; i < title.length(); i++) {
-            System.out.print("=");
-        }
-        System.out.println();
-        System.out.println(mainMenu);
-        for (int i = 1; i < menuOptions.length; i++) {
-            System.out.print("\t" + i + ". " + menuOptions[i - 1] + "\n");
-        }
-        System.out.println("\t0. Exit");
-        System.out.print(prompt);
-        return reader.nextInt();
-    }
-    
     // Read Matrix
     public static double[][] readMatrix(int rows, int cols, Scanner reader) {
         System.out.println("\tEnter each element of the matrix: ");
