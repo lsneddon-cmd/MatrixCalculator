@@ -89,13 +89,13 @@ public class Main {
 
     public static void addition(Scanner reader) {
         System.out.println("Let's start with the first matrix:");
-        int fRows = readRows(reader);
-        int fCols = readColumns(reader);
-        double[][] fMatrix = readMatrix(fRows, fCols, reader);
+        int fRows = MatrixReader.readRows(reader);
+        int fCols = MatrixReader.readColumns(reader);
+        double[][] fMatrix = MatrixReader.readMatrix(fRows, fCols, reader);
         System.out.println("Now for the second matrix:");
-        int rows = readRows(reader);
-        int cols = readColumns(reader);
-        double[][] matrix = readMatrix(rows, cols, reader);
+        int rows = MatrixReader.readRows(reader);
+        int cols = MatrixReader.readColumns(reader);
+        double[][] matrix = MatrixReader.readMatrix(rows, cols, reader);
         if (!(fRows == rows) || !(fCols == cols)) {
             System.out.println("\tERROR!\n\tMatrices must have the same dimensions to add");
         } else {
@@ -105,19 +105,19 @@ public class Main {
                     outputMatrix[i][j] = fMatrix[i][j] + matrix[i][j];
                 }
             }
-            printMatrix(outputMatrix, fRows, fCols);
+            MatrixPrinter.printMatrix(outputMatrix, fRows, fCols);
         }
     }
 
     public static void scalarMultiplication(Scanner reader) {
-        int rows = readRows(reader);
-        int cols = readColumns(reader);
-        double[][] matrix = readMatrix(rows, cols, reader);
+        int rows = MatrixReader.readRows(reader);
+        int cols = MatrixReader.readColumns(reader);
+        double[][] matrix = MatrixReader.readMatrix(rows, cols, reader);
         System.out.println("\tEnter a scalar to multiply by:");
         System.out.print("--> ");
         double scalar = reader.nextDouble();
         double[][] outputMatrix = calculateScalarMult(matrix, scalar);
-        printMatrix(outputMatrix, rows, cols);
+        MatrixPrinter.printMatrix(outputMatrix, rows, cols);
     }
 
     public static double[][] calculateScalarMult(double[][] matrix, double scalar) {
@@ -133,13 +133,13 @@ public class Main {
     public static void multiplyMatrices(Scanner reader) {
         // Matrix multiplication
         System.out.println("Let's start with the first matrix:");
-        int fRows = readRows(reader);
-        int fCols = readColumns(reader);
-        double[][] fMatrix = readMatrix(fRows, fCols, reader);
+        int fRows = MatrixReader.readRows(reader);
+        int fCols = MatrixReader.readColumns(reader);
+        double[][] fMatrix = MatrixReader.readMatrix(fRows, fCols, reader);
         System.out.println("Now for the second matrix:");
-        int sRows = readRows(reader);
-        int sCols = readColumns(reader);
-        double[][] sMatrix = readMatrix(sRows, sCols, reader);;
+        int sRows = MatrixReader.readRows(reader);
+        int sCols = MatrixReader.readColumns(reader);
+        double[][] sMatrix = MatrixReader.readMatrix(sRows, sCols, reader);;
         double[][] outputMatrix;
         if (fCols != sRows) {
             // Matrices cannot be multiplied, print error
@@ -154,14 +154,14 @@ public class Main {
                 }
             }
             // Print output Matrix
-            printMatrix(outputMatrix, fRows, sCols);
+            MatrixPrinter.printMatrix(outputMatrix, fRows, sCols);
         }
     }
 
     public static void sideTransposition(Scanner reader) {
-        int rows = readRows(reader);
-        int cols = readColumns(reader);
-        double[][] matrix = readMatrix(rows, cols, reader);
+        int rows = MatrixReader.readRows(reader);
+        int cols = MatrixReader.readColumns(reader);
+        double[][] matrix = MatrixReader.readMatrix(rows, cols, reader);
         int oRows = cols;
         int oCols = rows;
         double[][] outputMatrix = new double[oRows][oCols];
@@ -170,43 +170,43 @@ public class Main {
                 outputMatrix[i][j] = matrix[cols - 1 - j][rows - 1 - i];
             }
         }
-        printMatrix(outputMatrix, oRows, oCols);
+        MatrixPrinter.printMatrix(outputMatrix, oRows, oCols);
     }
 
     public static void verticalTransposition(Scanner reader) {
-        int rows = readRows(reader);
-        int cols = readColumns(reader);
-        double[][] matrix = readMatrix(rows, cols, reader);
+        int rows = MatrixReader.readRows(reader);
+        int cols = MatrixReader.readColumns(reader);
+        double[][] matrix = MatrixReader.readMatrix(rows, cols, reader);
         double[][] outputMatrix = new double[rows][cols];
         for (int i = 0; i < rows; i++) {
             for (int j= 0; j < cols; j++) {
                 outputMatrix[i][j] = matrix[i][rows - 1 - j];
             }
         }
-        printMatrix(outputMatrix, rows, cols);
+        MatrixPrinter.printMatrix(outputMatrix, rows, cols);
     }
 
     public static void horizontalTransposition(Scanner reader) {
-        int rows = readRows(reader);
-        int cols = readColumns(reader);
-        double[][] matrix = readMatrix(rows, cols, reader);
+        int rows = MatrixReader.readRows(reader);
+        int cols = MatrixReader.readColumns(reader);
+        double[][] matrix = MatrixReader.readMatrix(rows, cols, reader);
         double[][] outputMatrix = new double[rows][cols];
         for (int i = 0; i < rows; i++) {
             for (int j= 0; j < cols; j++) {
                 outputMatrix[i][j] = matrix[cols - 1 - i][j];
             }
         }
-        printMatrix(outputMatrix, rows, cols);
+        MatrixPrinter.printMatrix(outputMatrix, rows, cols);
     }
 
     public static void mainTransposition(Scanner reader) {
-        int rows = readRows(reader);
-        int cols = readColumns(reader);
-        double[][] matrix = readMatrix(rows, cols, reader);
+        int rows = MatrixReader.readRows(reader);
+        int cols = MatrixReader.readColumns(reader);
+        double[][] matrix = MatrixReader.readMatrix(rows, cols, reader);
         int oRows = cols;
         int oCols = rows;
         double[][] outputMatrix = calculateMainTransposition(matrix);
-        printMatrix(outputMatrix, oRows, oCols);
+        MatrixPrinter.printMatrix(outputMatrix, oRows, oCols);
     }
 
     public static double[][] calculateMainTransposition(double[][] matrix) {
@@ -221,10 +221,10 @@ public class Main {
     }
 
     public static void determinantOfMatrix(Scanner reader) {
-        int rows = readRows(reader);
-        int cols = readColumns(reader);
+        int rows = MatrixReader.readRows(reader);
+        int cols = MatrixReader.readColumns(reader);
         if (rows == cols) {
-            double[][] matrix = readMatrix(rows, cols, reader);
+            double[][] matrix = MatrixReader.readMatrix(rows, cols, reader);
             double determinant = calculateDeterminant(matrix);
             System.out.print("\tThe determinant is:\t");
             System.out.print(determinant + "\n");
@@ -285,9 +285,9 @@ public class Main {
     }
 
     public static void inverseOfMatrix(Scanner reader) {
-        int rows = readRows(reader);
-        int cols = readColumns(reader);
-        double[][] matrix = readMatrix(rows, cols, reader);
+        int rows = MatrixReader.readRows(reader);
+        int cols = MatrixReader.readColumns(reader);
+        double[][] matrix = MatrixReader.readMatrix(rows, cols, reader);
         double determinant = calculateDeterminant(matrix);
         if (determinant == 0) {
             System.out.println("Inverse of the given matrix can't be found as it's determinant is 0!");
@@ -295,7 +295,7 @@ public class Main {
             double[][] cofactorMatrix = findCofactors(matrix);
             double[][] transposedCofactorMatrix = calculateMainTransposition(cofactorMatrix);
             double[][] inverseMatrix = calculateScalarMult(transposedCofactorMatrix, 1 / determinant);
-            printMatrix(inverseMatrix, inverseMatrix.length, inverseMatrix.length);
+            MatrixPrinter.printMatrix(inverseMatrix, inverseMatrix.length, inverseMatrix.length);
         }
     }
 
@@ -315,41 +315,6 @@ public class Main {
             }
         }
         return output;
-    }
-
-    public static void printMatrix(double[][] matrix, int rows, int cols) {
-        System.out.println("\tThe result is:");
-        // format so that different sizes of numbers are aligned
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
-                System.out.print(matrix[i][j] + " ");
-            }
-            System.out.println();
-        }
-    }
-
-    public static double[][] readMatrix(int rows, int cols, Scanner reader) {
-        System.out.println("\tEnter each element of the matrix: ");
-        double[][] matrix = new double[rows][cols];
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
-                System.out.print("-->");
-                matrix[i][j] = reader.nextDouble();
-            }
-        }
-        return matrix;
-    }
-
-    public static int readRows(Scanner reader) {
-        System.out.print("\tEnter the number of rows in the matrix\n");
-        System.out.print("--> ");
-        return reader.nextInt();
-    }
-
-    public static int readColumns(Scanner reader) {
-        System.out.print("\tEnter the number of columns in the matrix\n");
-        System.out.print("--> ");
-        return reader.nextInt();
     }
 
 }
