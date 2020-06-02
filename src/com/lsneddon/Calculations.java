@@ -32,7 +32,9 @@ public class Calculations {
         return outputMatrix;
     }
     public static double[][] calculateMainTransposition(double[][] matrix) {
-        // currently works only for a square matrix
+        /////////////////////////////////////////////
+        // currently works only for a square matrix//
+        /////////////////////////////////////////////
         double[][] outputMatrix = new double[matrix.length][matrix.length];
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix.length; j++) {
@@ -93,7 +95,7 @@ public class Calculations {
         return output;
     }
     public static double[][] stripMatrix(double[][] matrix, int row, int col) {
-        // overloads strip method and returns a new matrix with a specifed row and column removed
+        // overloads strip method and returns a new matrix with a specified row and column removed
         double[][] output = new double[matrix.length - 1][matrix.length - 1];
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix.length; j++) {

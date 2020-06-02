@@ -2,6 +2,7 @@ package com.lsneddon;
 
 import java.util.Scanner;
 
+// A collection of static methods to read matrices from standard input to be processed
 public class Inputs {
     // Read Matrix
     public static double[][] readMatrix(int rows, int cols, Scanner reader) {
