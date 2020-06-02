@@ -12,11 +12,9 @@ public class Main {
     public static void main(String[] args) {
         Scanner reader = new Scanner(System.in);
 
-
         boolean exit = false;
         while (!exit) {
-            printMenu();
-            int menuChoice = reader.nextInt();
+            int menuChoice = Inputs.mainMenuSelection(reader);
 
             switch (menuChoice) {
                 case 0:
@@ -36,7 +34,7 @@ public class Main {
                     Inputs.multiplyMatrices(reader);
                     break;
                 case 4:
-                    int transpositionChoice = transposeSelection(reader);
+                    int transpositionChoice = Inputs.transposeSelection(reader);
                     switch (transpositionChoice) {
                         case 1:
                             System.out.println("Perfoming Main Diagonal Transposition");
@@ -44,15 +42,15 @@ public class Main {
                             break;
                         case 2:
                             System.out.println("Performing Side Transposition");
-                            Calculations.sideTransposition(reader);
+                            Inputs.sideTransposition(reader);
                             break;
                         case 3:
                             System.out.println("Performing Vertical Transposition");
-                            Calculations.verticalTransposition(reader);
+                            Inputs.verticalTransposition(reader);
                             break;
                         case 4:
                             System.out.println("Performing Horizonatal Transposition");
-                            Calculations.horizontalTransposition(reader);
+                            Inputs.horizontalTransposition(reader);
                             break;
                         default:
                             System.out.println("Unrecognised input... restarting program");
@@ -61,78 +59,17 @@ public class Main {
                     break;
                 case 5:
                     System.out.println("Calculating the Determinant of a Matrix");
-                    Calculations.determinantOfMatrix(reader);
+                    Inputs.determinantOfMatrix(reader);
                     break;
                 case 6:
                     System.out.println("Calculating the Inverse of a Matrix");
-                    Calculations.inverseOfMatrix(reader);
+                    Inputs.inverseOfMatrix(reader);
                     break;
                 default:
                     System.out.println("Unrecognised input, please try again");
             }
         }
     }
-
-    public static int transposeSelection(Scanner reader) {
-        String[] subMenuOptions = {
-                "Main diagonal",
-                "Side diagonal",
-                "Vertical line",
-                "Horizontal line"
-        };
-        String title = "\tMatrix Calculator\n";
-        System.out.print("\t");
-        for (int i = 0; i < title.length(); i++) {
-            System.out.print("=");
-        }
-        System.out.println();
-        System.out.print(title);
-        System.out.println("\tTransposition Menu");
-        System.out.print("\t");
-        for (int i = 0; i < title.length(); i++) {
-            System.out.print("=");
-        }
-        System.out.println();
-        for (int i = 1; i < subMenuOptions.length; i++) {
-            System.out.print("\t" + i + ". " + subMenuOptions[i - 1] + "\n");
-        }
-        System.out.println();
-        System.out.print("--> ");
-        return reader.nextInt();
-    }
-
-    public static void printMenu() {
-        String title = "\tMatrix Calculator\n";
-        String mainMenu = "Please select one of the following options:\n";
-        String[] menuOptions = {
-                "Add Matrices",
-                "Scalar Multiplication",
-                "Multiply Matrices",
-                "Transpose Matrix",
-                "Determinant",
-                "Inverse Matrix",
-        };
-        String prompt = "--> ";
-        System.out.print("\t");
-        for (int i = 0; i < title.length(); i++) {
-            System.out.print("=");
-        }
-        System.out.println();
-        System.out.print(title);
-        System.out.println("\tMain Menu");
-        System.out.print("\t");
-        for (int i = 0; i < title.length(); i++) {
-            System.out.print("=");
-        }
-        System.out.println();
-        System.out.println(mainMenu);
-        for (int i = 1; i < menuOptions.length; i++) {
-            System.out.print("\t" + i + ". " + menuOptions[i - 1] + "\n");
-        }
-        System.out.println("\t0. Exit");
-        System.out.print(prompt);
-    }
-
 }
 
 
