@@ -139,19 +139,15 @@ public class Inputs {
         int rows = Inputs.readRows(reader);
         int cols = Inputs.readColumns(reader);
         double[][] matrix = Inputs.readMatrix(rows, cols, reader);
-        int oRows = cols;
-        int oCols = rows;
         double[][] outputMatrix = Calculations.calculateMainTransposition(matrix);
-        MatrixPrinter.printMatrix(outputMatrix, oRows, oCols);
+        MatrixPrinter.printMatrix(outputMatrix, cols, rows);
     }
     public static void sideTransposition(Scanner reader) {
         int rows = Inputs.readRows(reader);
         int cols = Inputs.readColumns(reader);
         double[][] matrix = Inputs.readMatrix(rows, cols, reader);
-        int oRows = cols;
-        int oCols = rows;
-        double[][] outputMatrix = Calculations.calculateSideTransposition(matrix, oRows, oCols);
-        MatrixPrinter.printMatrix(outputMatrix, oRows, oCols);
+        double[][] outputMatrix = Calculations.calculateSideTransposition(matrix, cols, rows);
+        MatrixPrinter.printMatrix(outputMatrix, cols, rows);
     }
     public static void verticalTransposition(Scanner reader) {
         int rows = Inputs.readRows(reader);
