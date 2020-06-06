@@ -1,4 +1,8 @@
-package com.lsneddon;
+package com.lsneddon.matrixCalculator;
+
+/**
+ * Handles all user interaction with the main menu and sub menu
+ */
 
 import java.util.Scanner;
 

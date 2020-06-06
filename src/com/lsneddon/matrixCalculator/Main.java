@@ -1,10 +1,10 @@
+package com.lsneddon.matrixCalculator;
+
 /**
  * This program carries out mathematical calculations on matrices
- * @version 1.2 2020-06-02
+ * @version 1.0 2020-06-06
  * @author Lewis Sneddon
  */
-
-package com.lsneddon;
 
 import java.util.Scanner;
 

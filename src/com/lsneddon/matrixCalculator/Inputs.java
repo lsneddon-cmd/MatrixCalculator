@@ -1,8 +1,11 @@
-package com.lsneddon;
+package com.lsneddon.matrixCalculator;
+
+/**
+ * A collection of static methods to read matrices from standard input to be processed
+ */
 
 import java.util.Scanner;
 
-// A collection of static methods to read matrices from standard input to be processed
 public class Inputs {
     // Read Matrix
     public static double[][] readMatrix(int rows, int cols, Scanner reader) {

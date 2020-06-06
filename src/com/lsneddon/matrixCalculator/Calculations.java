@@ -1,6 +1,9 @@
-package com.lsneddon;
+package com.lsneddon.matrixCalculator;
 
-// A collection of static methods that carry out Math operations on given matrices
+/**
+ * A collection of static methods that carry out Math operations on given matrices
+ */
+
 public class Calculations {
     public static double[][] calculateAddition(int rows, int cols, double[][] first, double[][] second) {
         double[][] outputMatrix = new double[rows][cols];

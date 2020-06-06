@@ -1,4 +1,9 @@
-package com.lsneddon;
+package com.lsneddon.matrixCalculator;
+
+/**
+ *  Contains one static method that iterates through a 2 dimensional
+ *  double array and prints the elements in an appropriate format
+ */
 
 public class MatrixPrinter {
     public static void printMatrix(double[][] matrix, int rows, int cols) {
