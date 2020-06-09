@@ -8,11 +8,7 @@ import java.util.Scanner;
 
 public class Menu {
 
-    private String title = "\tMatrix Calculator\n";
-    private String mainSubTitle = "\tMain Menu\n";
-    private String transpositionSubTitle = "\tTransposition Menu\n";
-    private String mainMenu = "Please select one of the following options:\n";
-    private String[] menuOptions = {
+    private final String[] menuOptions = {
             "Add Matrices",
             "Scalar Multiplication",
             "Multiply Matrices",
@@ -20,25 +16,24 @@ public class Menu {
             "Determinant",
             "Inverse Matrix",
     };
-    private String[] subMenuOptions = {
+    private final String[] subMenuOptions = {
             "Main diagonal",
             "Side diagonal",
             "Vertical line",
             "Horizontal line"
     };
-    private String prompt = "--> ";
 
     public String getTitle() {
-        return title;
+        return "\tMatrix Calculator\n";
     }
     public String getMainSubTitle() {
-        return mainSubTitle;
+        return "\tMain Menu\n";
     }
     public String getTranspositionSubTitle() {
-        return transpositionSubTitle;
+        return "\tTransposition Menu\n";
     }
     public String getMainMenu() {
-        return mainMenu;
+        return "Please select one of the following options:\n";
     }
     public String[] getMenuOptions() {
         return menuOptions;
@@ -47,7 +42,7 @@ public class Menu {
         return subMenuOptions;
     }
     public String getPrompt() {
-        return prompt;
+        return "--> ";
     }
 
     public int mainMenuSelection(Scanner reader) {

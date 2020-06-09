@@ -38,7 +38,7 @@ public class Main {
                     int transpositionChoice = menu.transposeMenuSelection(reader);
                     switch (transpositionChoice) {
                         case 1:
-                            System.out.println("Perfoming Main Diagonal Transposition");
+                            System.out.println("Performing Main Diagonal Transposition");
                             Inputs.mainTransposition(reader);
                             break;
                         case 2:
@@ -50,7 +50,7 @@ public class Main {
                             Inputs.verticalTransposition(reader);
                             break;
                         case 4:
-                            System.out.println("Performing Horizonatal Transposition");
+                            System.out.println("Performing Horizontal Transposition");
                             Inputs.horizontalTransposition(reader);
                             break;
                         default:
