@@ -18,9 +18,9 @@ public final class Calculations {
         return outputMatrix;
     }
     public static double[][] calculateScalarMult(double[][] matrix, double scalar) {
-        double[][] outputMatrix = new double[matrix.length][matrix.length];
+        double[][] outputMatrix = new double[matrix.length][matrix[0].length];
         for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix.length; j++) {
+            for (int j = 0; j < matrix[0].length; j++) {
                 outputMatrix[i][j] = matrix[i][j] * scalar;
             }
         }
