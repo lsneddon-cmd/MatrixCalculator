@@ -1,14 +1,14 @@
 package com.lsneddon.matrixCalculator;
 
-/**
- * Prints menu options
+/*
+  Prints menu options
  */
 
 import java.util.Scanner;
 
 public final class Menu {
 
-    private String[] menuOptions = {
+    private final String[] menuOptions = {
             "Add Matrices",
             "Scalar Multiplication",
             "Multiply Matrices",
@@ -16,17 +16,17 @@ public final class Menu {
             "Determinant",
             "Inverse Matrix",
     };
-    private String[] subMenuOptions = {
+    private final String[] subMenuOptions = {
             "Main diagonal",
             "Side diagonal",
             "Vertical line",
             "Horizontal line"
     };
-    private String title = "\tMatrix Calculator\n";
-    private String subTitle = "\tMain Menu\n";
-    private String transpositionSubTitle = "\tTransposition Menu\n";
-    private String mainMenu = "Please select one of the following options:\n";
-    private String prompt = "--> ";
+    private final String title = "\tMatrix Calculator\n";
+    private final String subTitle = "\tMain Menu\n";
+    private final String transpositionSubTitle = "\tTransposition Menu\n";
+    private final String mainMenu = "Please select one of the following options:\n";
+    private final String prompt = "--> ";
 
     public String getTitle() { return title; }
     public String getMainSubTitle() { return subTitle; }

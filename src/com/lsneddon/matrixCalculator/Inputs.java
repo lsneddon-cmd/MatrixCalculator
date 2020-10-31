@@ -1,7 +1,7 @@
 package com.lsneddon.matrixCalculator;
 
-/**
- * A collection of static methods to read matrices from standard input to be processed
+/*
+  A collection of static methods to read matrices from standard input to be processed
  */
 
 import java.util.Scanner;
@@ -11,8 +11,8 @@ public class Inputs {
     public static double[][] readMatrix(int rows, int cols, Scanner reader) {
         System.out.println("\tEnter each element of the matrix: ");
         double[][] matrix = new double[rows][cols];
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
                 System.out.print((i + 1) + ", " + (j + 1) + " --> ");
                 matrix[i][j] = reader.nextDouble();
             }
@@ -43,7 +43,7 @@ public class Inputs {
         if (!(fRows == rows) || !(fCols == cols)) {
             System.out.println("\tERROR!\n\tMatrices must have the same dimensions to add");
         } else {
-            double[][] outputMatrix = Calculations.calculateAddition(fRows, fCols, fMatrix, matrix);
+            double[][] outputMatrix = Calculations.calculateAddition(fMatrix, matrix);
             MatrixPrinter.printMatrix(outputMatrix);
         }
     }

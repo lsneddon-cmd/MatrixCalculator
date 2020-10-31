@@ -1,8 +1,8 @@
 package com.lsneddon.matrixCalculator;
 
-/**
- * This program carries out mathematical calculations on matrices
- * @version 1.0 2020-06-06
+/*
+  This program carries out mathematical calculations on matrices
+  @version 1.0 2020-06-06
  * @author Lewis Sneddon
  */
 

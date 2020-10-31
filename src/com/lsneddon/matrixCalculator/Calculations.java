@@ -8,10 +8,10 @@ public final class Calculations {
 
     private Calculations() {}
 
-    public static double[][] calculateAddition(int rows, int cols, double[][] first, double[][] second) {
-        double[][] outputMatrix = new double[rows][cols];
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
+    public static double[][] calculateAddition(double[][] first, double[][] second) {
+        double[][] outputMatrix = new double[first.length][first[0].length];
+        for (int i = 0; i < outputMatrix.length; i++) {
+            for (int j = 0; j < outputMatrix[0].length; j++) {
                 outputMatrix[i][j] = first[i][j] + second[i][j];
             }
         }
