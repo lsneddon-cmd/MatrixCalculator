@@ -5,12 +5,12 @@ package com.lsneddon.matrixCalculator;
  *  double array and prints the elements in an appropriate format
  */
 
-public class MatrixPrinter {
-    public static void printMatrix(double[][] matrix, int rows, int cols) {
+public final class MatrixPrinter {
+    public static void printMatrix(double[][] matrix) {
         System.out.println("\tThe result is:");
         // format so that different sizes of numbers are aligned
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
                 System.out.printf("%4.0f", matrix[i][j]);
             }
             System.out.println();
