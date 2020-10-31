@@ -1,14 +1,14 @@
 package com.lsneddon.matrixCalculator;
 
 /**
- * Handles all user interaction with the main menu and sub menu
+ * Prints menu options
  */
 
 import java.util.Scanner;
 
-public class Menu {
+public final class Menu {
 
-    private final String[] menuOptions = {
+    private String[] menuOptions = {
             "Add Matrices",
             "Scalar Multiplication",
             "Multiply Matrices",
@@ -16,34 +16,29 @@ public class Menu {
             "Determinant",
             "Inverse Matrix",
     };
-    private final String[] subMenuOptions = {
+    private String[] subMenuOptions = {
             "Main diagonal",
             "Side diagonal",
             "Vertical line",
             "Horizontal line"
     };
+    private String title = "\tMatrix Calculator\n";
+    private String subTitle = "\tMain Menu\n";
+    private String transpositionSubTitle = "\tTransposition Menu\n";
+    private String mainMenu = "Please select one of the following options:\n";
+    private String prompt = "--> ";
 
-    public String getTitle() {
-        return "\tMatrix Calculator\n";
-    }
-    public String getMainSubTitle() {
-        return "\tMain Menu\n";
-    }
-    public String getTranspositionSubTitle() {
-        return "\tTransposition Menu\n";
-    }
-    public String getMainMenu() {
-        return "Please select one of the following options:\n";
-    }
+    public String getTitle() { return title; }
+    public String getMainSubTitle() { return subTitle; }
+    public String getTranspositionSubTitle() { return transpositionSubTitle; }
+    public String getMainMenu() { return mainMenu; }
     public String[] getMenuOptions() {
         return menuOptions;
     }
     public String[] getSubMenuOptions() {
         return subMenuOptions;
     }
-    public String getPrompt() {
-        return "--> ";
-    }
+    public String getPrompt() { return prompt; }
 
     public int mainMenuSelection(Scanner reader) {
 
