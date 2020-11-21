@@ -18,4 +18,9 @@ public class Add implements IMatrixCalculator {
     public String getCalculation() {
         return "add";
     }
+
+    @Override
+    public boolean validateOperation(Matrix first, Matrix second) {
+        return first.getRows() == second.getRows() && first.getCols() == second.getCols();
+    }
 }
